@@ -1,0 +1,76 @@
+.website-name{
+    font-weight: bold;
+}
+.container-one{
+    background-image: url(../public/static/first-img.png);
+    background-size: 1600px;
+    background-position: 3rem;
+}
+.container1{
+    max-width: 600px;
+}
+.bottom-box {
+    --mask:
+      radial-gradient(32.02px at 50% calc(100% - 45px),#000 99%,#0000 101%) calc(50% - 40px) 0/80px 100%,
+      radial-gradient(32.02px at 50% calc(100% + 25px),#0000 99%,#000 101%) 50% calc(100% - 20px)/80px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+.container2{
+    max-width: 500px;
+}
+.container3{
+    max-width: 550px;
+}
+.container4{
+    max-width: 500px;
+}
+.container5{
+    max-width: 300px;
+}
+.container6{
+    max-width: 550px;
+}
+.container-two{
+    background-image: url(../public/static/first-img.png);  
+    height: 100%;
+    background-size: 3100px;
+}
+.open-account{
+    border: 2px solid black;
+}
+.holvi-pricing{
+    background:none;
+    border: 2px solid black;
+}
+.holvi-pricing:hover{
+    background-color: black;
+    color: white;
+}
+.top-box {
+    --mask:
+      radial-gradient(32.02px at 50% 45px,#000 99%,#0000 101%) calc(50% - 40px) 0/80px 100%,
+      radial-gradient(32.02px at 50% -25px,#0000 99%,#000 101%) 50% 20px/80px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+  .container-right{
+    background-color: #fdf86e;
+
+    min-height: 100vh;
+}
+.container-left{
+    min-height: 100vh;
+}
+.login{
+    background-color: #0c8487;
+    border: 1px solid #0c8487;
+    border-radius: 5px;
+    color: white;
+}
+.form-text3 a{
+    color: #0c8487;  
+}
+.last-paragraph{
+    font-size: 11.5px;
+}
