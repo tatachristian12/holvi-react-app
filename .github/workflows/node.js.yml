@@ -12,11 +12,10 @@ on:
 jobs:
   build:
 
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
         node-version: [18.x, 20.x, 22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
@@ -29,14 +28,11 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - name: Check Secrets
-      run: |
-        if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then echo "User is EMPTY"; else echo "User is set"; fi
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: tatachristian12/demo-holvi-app
-        registry: index.docker.io/v1/
+        registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
