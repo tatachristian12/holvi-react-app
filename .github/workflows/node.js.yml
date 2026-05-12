@@ -29,12 +29,25 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
 
+     # 1. First, get the version from your file
+    - name: Extract version
+      id: extract_version
+      run: |
+        VERSION=$(jq -r '.version' package.json)
+        echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
+        # Also create a Short SHA for a cleaner tag
+        echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+    # 2. Then, build and push using the variables
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: tatachristian12/demo-holvi-app
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        # We manually construct the strings here since this action doesn't use 'metadata-action' logic
+        tags: |
+          ${{ env.APP_VERSION }}-${{ github.ref_name }}-${{ env.SHORT_SHA }}
+          ${{ env.APP_VERSION }}
+          ${{ github.ref_name }}-${{ env.SHORT_SHA }}
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
