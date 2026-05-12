@@ -1,5 +1,7 @@
 import thirdImg from '../../../public/static/third-img.png'
 import { Link } from "react-router-dom";
+import Image from './Image';
+import Buttons from './Buttons';
 
 function BodyThree() {
 
@@ -8,7 +10,7 @@ function BodyThree() {
             <div class="container pt-5 pb-5">
                 <div class="row pb-5">
                     <div class="col-md-6 pt-5 justify-content-start d-flex">
-                        <img src={thirdImg} alt="third-img" width="90%" />
+                        <Image websiteImg={thirdImg}/>
                     </div>
                     <div class="col-md-6 mt-3">
                         <div class="container3">
@@ -28,7 +30,7 @@ function BodyThree() {
                             <p><i class="fa-solid fa-check fs-5"></i> <span class="fw-bold ps-2">Financial insights</span> – track
                                 spending and keep an eye on KPIs in your Holvi dashboard</p>
                         </div>
-                        <Link to="/open-account" class="text-decoration-none text-white"><button class="btn rounded-0 bg-dark text-white border-dark px-4 py-2 mt-4">Open business account</button></Link>
+                        <Buttons websiteButtons="Open Business Account"/>
                     </div>
                 </div>
             </div>

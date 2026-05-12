@@ -1,5 +1,7 @@
 import fifthImg from '../../../public/static/fifth-img.png'
 import { Link } from "react-router-dom";
+import Image from './Image';
+import Buttons from './Buttons';
 
 function BodySeven() {
   
@@ -14,12 +16,11 @@ function BodySeven() {
               –
               all for a transparent and fixed price.</p>
           </div>
-          <button class="btn rounded-0 bg-dark text-white border-dark px-4 py-2 mt-4"><Link to=""
-              class="text-decoration-none text-white">Explore international
-            transfers</Link></button>
+          <Buttons websiteButtons="Explore international
+            transfers"/>
         </div>
         <div class="col-md-6 order-1 order-md-2 pt-5 pb-5">
-          <img src={fifthImg} alt="second-img" width="80%"/>
+          <Image websiteImg={fifthImg}/>
         </div>
       </div>
     </div>

@@ -18,7 +18,8 @@ function App() {
     <>
       <NavScrollExample />
       <BodyOne />
-      <BodyTwo />
+      <BodyTwo firstparagraph="For Solopreneurs" header="Everything you need for self-employment success" secondparagraph="Manage your business finances from the start. Tidy books, smart
+              financial insights and professional invoices – all at your fingertips." />
       <BodyThree />
       <BodyFour />
       <BodyFive />

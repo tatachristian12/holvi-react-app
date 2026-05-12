@@ -1,5 +1,6 @@
 import fourthImg from '../../../public/static/four-img.png'
 import { Link } from "react-router-dom";
+import Image from './Image';
 
 function BodyFour() {
  
@@ -15,7 +16,7 @@ function BodyFour() {
         </div>
       </div>
       <div class="col-md-6 pt-5 pb-5">
-        <img src={fourthImg} alt="second-img" width="80%" height="80%"/>
+        <Image websiteImg={fourthImg}/>
       </div>
     </div>
   </div>

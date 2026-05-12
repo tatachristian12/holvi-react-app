@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
+import Buttons from './Buttons';
 
 function NavScrollExample() {
   return (
@@ -52,8 +53,7 @@ function NavScrollExample() {
           </Nav>
           
           <Link to="/login" class="text-dark login-button text-decoration-none fw-bold">Log in</Link>
-          <Link to="/open-account" class="text-decoration-none "><button
-              class="bg-dark text-light px-4 py-2 ms-4">Open account</button></Link>
+          <Buttons websiteButtons="Open Business Account"/>
           
         </Navbar.Collapse>
       </Container>

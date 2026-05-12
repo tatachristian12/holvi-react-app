@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Buttons from "./Buttons";
 
 function BodyTen() {
    
@@ -18,8 +19,7 @@ function BodyTen() {
           </div>
         </div>
         <div class="col-md-6 col-12">
-          <Link to="/open-account" class="text-decoration-none text-white"><button
-              class="bg-dark text-white border-dark px-4 py-2 mt-5 me-5 open-account">Open business account</button></Link>
+        <Buttons websiteButtons="Open Business Account"/>
           <Link to="" class="text-decoration-none text-dark"><button class="mt-5 px-5 py-2 holvi-pricing">Holvi
               Pricing</button></Link>
         </div>
