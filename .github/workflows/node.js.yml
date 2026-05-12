@@ -43,11 +43,8 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: tatachristian12/demo-holvi-app
-        # We manually construct the strings here since this action doesn't use 'metadata-action' logic
-        tags: |
-          ${{ env.APP_VERSION }}-${{ github.ref_name }}-${{ env.SHORT_SHA }}
-          ${{ env.APP_VERSION }}
-          ${{ github.ref_name }}-${{ env.SHORT_SHA }}
+        # Use a single line separated by commas, no spaces after commas
+        tags: ${{ env.APP_VERSION }}-${{ github.ref_name }}-${{ env.SHORT_SHA }},${{ env.APP_VERSION }},${{ github.ref_name }}-${{ env.SHORT_SHA }}
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
