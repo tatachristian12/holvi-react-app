@@ -33,7 +33,20 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: tatachristian12/demo-holvi-app
-        tags: holvi-app-v1
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: Extract Docker metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: |
+          my-docker-hub-user/app
+          ghcr.io/${{ github.repository }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha
